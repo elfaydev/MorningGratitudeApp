@@ -1,273 +1,240 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.DaysFragment"
-   >
-    <LinearLayout
+    android:background="@color/paige_1"
+    android:fillViewport="true"
+    tools:context=".ui.DaysFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-
-        >
-
-
+       >
 
         <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <ImageButton
-            android:id="@+id/left"
-            android:layout_width="wrap_content"
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="4dp"
-            android:backgroundTint="#00FFFFFF"
-            android:minHeight="48dp"
-            android:src="@drawable/ic_left"
-            android:text="up"
-            app:layout_constraintEnd_toStartOf="@+id/right"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <ImageButton
-            android:id="@+id/right"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="8dp"
-            android:backgroundTint="#00FFFFFF"
-            android:minHeight="48dp"
-            android:src="@drawable/ic_right"
-            android:text="up"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <TextView
-            android:id="@+id/date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="105dp"
-            android:layout_marginBottom="37dp"
-            android:fontFamily="sans-serif-light"
-            android:text="@string/hello_blank_fragment"
-            android:textColor="#000000"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/left"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="4dp"
+                android:backgroundTint="#00FFFFFF"
+                android:minHeight="48dp"
+                android:src="@drawable/ic_left"
+                android:text="up"
+                app:layout_constraintEnd_toStartOf="@+id/right"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <ImageButton
+                android:id="@+id/right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="8dp"
+                android:backgroundTint="#00FFFFFF"
+                android:minHeight="48dp"
+                android:src="@drawable/ic_right"
+                android:text="up"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="105dp"
+                android:layout_marginBottom="37dp"
+                android:fontFamily="@font/montserrat_alternates"
+                android:text="@string/hello_blank_fragment"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/left"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardview1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:outlineAmbientShadowColor="@color/black"
+                android:outlineSpotShadowColor="@color/black"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="9dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/orange_1"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="monospace"
+                        android:text="@string/focus"
+                        android:textColor="@color/blue"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/focuson"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/rounded_background"
+                        android:hint="Write here"
+                        android:inputType="textMultiLine"
+                        android:selectAllOnFocus="true" />
+
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardview2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:outlineAmbientShadowColor="@color/black"
+                android:outlineSpotShadowColor="@color/black"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="9dp"
+
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/orange_1"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="monospace"
+                        android:text="@string/grateful"
+                        android:textColor="@color/blue"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/gratefulfor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/rounded_background"
+                        android:hint="Write here"
+                        android:inputType="textMultiLine"
+                        android:selectAllOnFocus="true" />
+
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardview3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:outlineAmbientShadowColor="@color/black"
+                android:outlineSpotShadowColor="@color/black"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="9dp"
+
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/orange_1"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="monospace"
+                        android:text="@string/letgo"
+                        android:textColor="@color/blue"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/letgoof"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/rounded_background"
+                        android:hint="Write here"
+                        android:inputType="textMultiLine"
+                        android:selectAllOnFocus="true" />
+
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:backgroundTint="@color/blue_1"
+                android:text="SAVE" />
+
+            <TextView
+                android:id="@+id/showData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal" />
+
+
+        </LinearLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cardview1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:outlineAmbientShadowColor="@color/black"
-            android:outlineSpotShadowColor="@color/black"
-            app:cardCornerRadius="25dp"
-            app:cardElevation="9dp"
-            app:cardPreventCornerOverlap="true"
-            app:cardUseCompatPadding="true">
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="16dp"
-                android:orientation="vertical"
-                android:background="#FF8544"
-                >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="monospace"
-                    android:text="I WILL FOCUS ON:"
-                    android:textColor="#FFFFFF"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-
-                <EditText
-                    android:id="@+id/focuson"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/rounded_background"
-                    android:hint="Write here"
-                    android:inputType="textMultiLine"
-                    android:selectAllOnFocus="true" />
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Write here"
-                    android:inputType="textMultiLine"
-                    android:background="@drawable/rounded_background"
-                    android:layout_weight="1"
-                    android:layout_marginTop="8dp"/>
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Write here"
-                    android:inputType="textMultiLine"
-                    android:background="@drawable/rounded_background"
-                    android:layout_weight="1"
-                    android:layout_marginTop="8dp"/>
-
-
-            </LinearLayout>
-
-        </com.google.android.material.card.MaterialCardView>
-        <Button
-            android:layout_gravity="center_horizontal"
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="SAVE" />
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cardview2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:outlineAmbientShadowColor="@color/black"
-            android:outlineSpotShadowColor="@color/black"
-            app:cardCornerRadius="25dp"
-            app:cardElevation="9dp"
-
-            app:cardPreventCornerOverlap="true"
-            app:cardUseCompatPadding="true">
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="16dp"
-                android:orientation="vertical"
-                android:background="#FF8544"
-                >
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="monospace"
-                    android:text="I'M GRATFUL FOR:"
-                    android:textColor="#FFFFFF"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/rounded_background"
-                    android:hint="Write here"
-                    android:inputType="textMultiLine"
-                    android:selectAllOnFocus="true"
-                    android:layout_weight="1"
-                    />
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Write here"
-                    android:inputType="textMultiLine"
-                    android:background="@drawable/rounded_background"
-                    android:layout_weight="1"
-                    android:layout_marginTop="8dp"/>
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Write here"
-                    android:inputType="textMultiLine"
-                    android:background="@drawable/rounded_background"
-                    android:layout_weight="1"
-                    android:layout_marginTop="8dp"/>
-
-
-            </LinearLayout>
-
-        </com.google.android.material.card.MaterialCardView>
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cardview3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:outlineAmbientShadowColor="@color/black"
-            android:outlineSpotShadowColor="@color/black"
-            app:cardCornerRadius="25dp"
-            app:cardElevation="9dp"
-
-            app:cardPreventCornerOverlap="true"
-            app:cardUseCompatPadding="true">
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="16dp"
-                android:orientation="vertical"
-                android:background="#FF8544"
-                >
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="monospace"
-                    android:text="I WILL LET GO OF:"
-                    android:textColor="#FFFFFF"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/rounded_background"
-                    android:hint="Write here"
-                    android:inputType="textMultiLine"
-                    android:selectAllOnFocus="true"
-                    android:layout_weight="1"
-                    />
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Write here"
-                    android:inputType="textMultiLine"
-                    android:background="@drawable/rounded_background"
-                    android:layout_weight="1"
-                    android:layout_marginTop="8dp"/>
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Write here"
-                    android:inputType="textMultiLine"
-                    android:background="@drawable/rounded_background"
-                    android:layout_weight="1"
-                    android:layout_marginTop="8dp"/>
-
-
-            </LinearLayout>
-
-        </com.google.android.material.card.MaterialCardView>
-
-
-
-
-
-
-
-
-
-
-    </LinearLayout>
-    </ScrollView>
+</androidx.core.widget.NestedScrollView>
 

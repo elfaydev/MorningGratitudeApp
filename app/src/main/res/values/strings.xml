@@ -2,4 +2,9 @@
     <string name="app_name">Powerful Three</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="focus">I will focus on</string>
+    <string name="grateful">I am grateful for</string>
+    <string name="letgo">I will let go of</string>
+    <string name="empty_calendar_message">You have no items! Click on the orange add button and fill the text fields and click on save.</string>
 </resources>

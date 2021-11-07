@@ -3,8 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/KoltinAppLearning/PowerfulThree/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/KoltinAppLearning/PowerfulThree/app/src/main/res/drawable/ic_add.xml" value="0.21875" />
+        <entry key="..\:/KoltinAppLearning/PowerfulThree/app/src/main/res/drawable/ic_add_24.xml" value="0.21875" />
+        <entry key="..\:/KoltinAppLearning/PowerfulThree/app/src/main/res/drawable/ic_baseline_format_quote_24.xml" value="0.21875" />
+        <entry key="..\:/KoltinAppLearning/PowerfulThree/app/src/main/res/drawable/ic_calendar.xml" value="0.21875" />
+        <entry key="..\:/KoltinAppLearning/PowerfulThree/app/src/main/res/drawable/rounded_background.xml" value="0.17239583333333333" />
+        <entry key="..\:/KoltinAppLearning/PowerfulThree/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/KoltinAppLearning/PowerfulThree/app/src/main/res/layout/calendar_list_item.xml" value="0.24320652173913043" />
+        <entry key="..\:/KoltinAppLearning/PowerfulThree/app/src/main/res/layout/fragment_data_of_one_day.xml" value="0.18" />
         <entry key="..\:/KoltinAppLearning/PowerfulThree/app/src/main/res/layout/fragment_days.xml" value="0.25" />
+        <entry key="..\:/KoltinAppLearning/PowerfulThree/app/src/main/res/layout/fragment_edit_item.xml" value="0.2509057971014493" />
+        <entry key="..\:/KoltinAppLearning/PowerfulThree/app/src/main/res/layout/fragment_quote.xml" value="0.2463768115942029" />
+        <entry key="..\:/KoltinAppLearning/PowerfulThree/app/src/main/res/layout/fragment_show_data.xml" value="0.25" />
+        <entry key="..\:/KoltinAppLearning/PowerfulThree/app/src/main/res/menu/bottom_app_bar.xml" value="0.29322916666666665" />
         <entry key="..\:/KoltinAppLearning/PowerfulThree/app/src/main/res/menu/menu.xml" value="0.26296296296296295" />
       </map>
     </option>

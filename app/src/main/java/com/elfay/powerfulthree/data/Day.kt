@@ -7,7 +7,13 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "days")
 data class Day(
     @PrimaryKey(autoGenerate = false)
-    val currentDay: Long,
-    @ColumnInfo(name="focus_on")
-    val focusOn: String
+    val currentDay:String,
+    @ColumnInfo(name = "month")
+    val month: String,
+    @ColumnInfo(name = "focus_on")
+    val focusOn: String,
+    @ColumnInfo(name = "grateful_for")
+    val gratefulFor: String,
+    @ColumnInfo(name = "let_go_of")
+    val letGoOf: String
 )
