@@ -34,9 +34,10 @@ class DaysViewModel(private val dayDao: DayDao) : ViewModel() {
 
     }
     //currentDay for this method is gonna be always the nonFormatedDate
-    private fun getNewDayEntry(currentDay: String,month: String, focusOn: String,gratefulFor:String,letGoOf:String): Day {
+    private fun getNewDayEntry(currentDay: String,year: Int, month: Int, focusOn: String,gratefulFor:String,letGoOf:String): Day {
         return Day(
             currentDay = currentDay,
+            year = year,
             month = month,
             focusOn = focusOn,
             gratefulFor=gratefulFor,
@@ -44,8 +45,8 @@ class DaysViewModel(private val dayDao: DayDao) : ViewModel() {
         )
     }
 
-    fun addNewDay(currentDay: String,month: String, focusOn: String,gratefulFor:String,letGoOf:String) {
-        val newDay = getNewDayEntry(currentDay,month, focusOn,gratefulFor,letGoOf)
+    fun addNewDay(currentDay: String,year: Int, month: Int, focusOn: String,gratefulFor:String,letGoOf:String) {
+        val newDay = getNewDayEntry(currentDay,year,month, focusOn,gratefulFor,letGoOf)
         insertDay(newDay)
 
     }
@@ -65,10 +66,22 @@ class DaysViewModel(private val dayDao: DayDao) : ViewModel() {
 
     }
 
-    fun getMonth(): String {
+    fun testDate(date: Long): String {
+
         var simpleDateFormat: SimpleDateFormat
-        simpleDateFormat = SimpleDateFormat("LLLL")
-        return simpleDateFormat.format(nonFormatedDate.value).toString()
+        simpleDateFormat = SimpleDateFormat("EEEE LLLL dd'th' yyyy ")
+        return simpleDateFormat.format(date).toString()
+
+    }
+    fun getYear(): Int {
+        var simpleDateFormat: SimpleDateFormat
+        simpleDateFormat = SimpleDateFormat("yyyy")
+        return simpleDateFormat.format(nonFormatedDate.value).toString().toInt()
+    }
+    fun getMonth(): Int {
+        var simpleDateFormat: SimpleDateFormat
+        simpleDateFormat = SimpleDateFormat("LL")
+        return simpleDateFormat.format(nonFormatedDate.value).toString().toInt()
     }
 
     fun isEntryValid(focusOn: String,gratefulFor:String,letGoOf:String):Boolean{
@@ -92,7 +105,9 @@ class DaysViewModel(private val dayDao: DayDao) : ViewModel() {
     }
 
 
-
+    fun updateDate(date:Long){
+        nonFormatedDate.value = date
+    }
 
 
     fun updateItem(day: Day){
@@ -101,13 +116,13 @@ class DaysViewModel(private val dayDao: DayDao) : ViewModel() {
         }
     }
 
-    private fun getUpdatedDayEntry(currentDay:String,month:String,focusOn:String,gratefulFor:String,letGoOf:String): Day{
-        return Day(currentDay=currentDay,month=month,focusOn=focusOn,gratefulFor=gratefulFor,letGoOf=letGoOf)
+    private fun getUpdatedDayEntry(currentDay:String,year: Int, month: Int,focusOn:String,gratefulFor:String,letGoOf:String): Day{
+        return Day(currentDay=currentDay,year = year,month=month,focusOn=focusOn,gratefulFor=gratefulFor,letGoOf=letGoOf)
 
     }
 
-    fun updateItem(currentDay:String,month:String,focusOn:String,gratefulFor:String,letGoOf:String){
-        val updatedDay = getUpdatedDayEntry(currentDay,month,focusOn,gratefulFor,letGoOf)
+    fun updateItem(currentDay:String,year: Int, month: Int,focusOn:String,gratefulFor:String,letGoOf:String){
+        val updatedDay = getUpdatedDayEntry(currentDay,year,month,focusOn,gratefulFor,letGoOf)
         updateItem(updatedDay)
 
     }

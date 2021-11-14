@@ -1,6 +1,7 @@
 package com.elfay.powerfulthree.ui
 
 
+import android.app.DatePickerDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,8 +13,10 @@ import android.widget.Toast.makeText
 import androidx.fragment.app.activityViewModels
 import com.elfay.powerfulthree.databinding.FragmentDaysBinding
 import com.elfay.powerfulthree.DaysApplication
+import com.elfay.powerfulthree.R
 import com.elfay.powerfulthree.data.Day
-
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 class DaysFragment : Fragment() {
@@ -32,7 +35,7 @@ class DaysFragment : Fragment() {
 
     private var _binding: FragmentDaysBinding? = null
     private val binding get() = _binding!!
-
+    private val cal = Calendar.getInstance()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -78,6 +81,7 @@ class DaysFragment : Fragment() {
                     enter = 1
                     viewModel.addNewDay(
                         viewModel.formatDate(),
+                        viewModel.getYear(),
                         viewModel.getMonth(),
                         binding.focuson.text.toString(),
                         binding.gratefulfor.text.toString(),
@@ -102,6 +106,7 @@ class DaysFragment : Fragment() {
     private  fun updateDay(){
             viewModel.updateItem(
                 viewModel.formatDate(),
+                viewModel.getYear(),
                 viewModel.getMonth(),
                 binding.focuson.text.toString(),
                 binding.gratefulfor.text.toString(),
@@ -126,6 +131,26 @@ class DaysFragment : Fragment() {
                     }
                 }
         }
+
+
+        val dateSetListener =  DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+                cal.set(Calendar.YEAR, year)
+               cal.set(Calendar.MONTH, monthOfYear)
+                cal.set(Calendar.DAY_OF_MONTH, dayOfMonth)
+
+            val format = "dd.MM.yyyy"
+            val sdf = SimpleDateFormat(format,Locale.US)
+                binding.test.text = sdf.format(cal.time)
+                viewModel.updateDate(cal.timeInMillis)
+            }
+
+
+        binding.date.setOnClickListener {
+            DatePickerDialog(requireContext(),R.style.ThemeOverlay_App_DatePicker, dateSetListener,
+                cal.get(Calendar.YEAR)
+                ,cal.get(Calendar.MONTH)
+                ,cal.get(Calendar.DAY_OF_MONTH)).show()
+        }
         binding.left.setOnClickListener {
             viewModel.minusDay()
 
@@ -134,6 +159,7 @@ class DaysFragment : Fragment() {
             viewModel.plusDay()
 
         }
+
         /*   viewModel.retrieveDay(viewModel.formatDate())
                .observe(this.viewLifecycleOwner) { selecteday ->
                    if (selecteday != null) {

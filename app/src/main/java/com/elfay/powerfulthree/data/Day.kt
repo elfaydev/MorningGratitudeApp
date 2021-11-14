@@ -8,8 +8,10 @@ import androidx.room.PrimaryKey
 data class Day(
     @PrimaryKey(autoGenerate = false)
     val currentDay:String,
+    @ColumnInfo(name = "year")
+    val year: Int,
     @ColumnInfo(name = "month")
-    val month: String,
+    val month: Int,
     @ColumnInfo(name = "focus_on")
     val focusOn: String,
     @ColumnInfo(name = "grateful_for")
